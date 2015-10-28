@@ -70,9 +70,9 @@ var ImageZoom = angular.module('ImageZoom', [])
           });
 
           // if touch devices, do nothing
-          if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-            return;
-          }
+          //if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+          //  return;
+          //}
 
           var hideLens = function () {
             lens.css({

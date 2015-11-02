@@ -49,13 +49,13 @@ var ImageZoom = angular.module('ImageZoom', [])
           var isLensHidden = false;
           var isImageLoading = false;
 
-          // Check if zoomFactor was set 
+          // Check if zoomFactor was set
           // otherwise set it to ImageZoomDefaultConfig.zoomFactor
           if(!$scope.zoomFactor){
             $scope.zoomFactor = ImageZoomDefaultConfig.zoomFactor;
           }
 
-          // Check if backgroundColor was set 
+          // Check if backgroundColor was set
           // otherwise set it to ImageZoomDefaultConfig.backgroundColor
           if(!$scope.backgroundColor){
             $scope.backgroundColor = ImageZoomDefaultConfig.backgroundColor;
@@ -63,7 +63,7 @@ var ImageZoom = angular.module('ImageZoom', [])
 
           //Enable Parent Controller to change the imageSrc
           var watchImageSrc = $scope.$parent.$watch('imageSrc', function (newVale, oldValue) {
-            //console.log('[imageGlass][watchImageSrc][new: ' + newVale + '][oldValue:' + oldValue + ']');
+            ////console.log('[imageGlass][watchImageSrc][new: ' + newVale + '][oldValue:' + oldValue + ']');
             if (newVale) {
               $scope.imageSrc = newVale;
             }
@@ -107,7 +107,7 @@ var ImageZoom = angular.module('ImageZoom', [])
           };
 
           var mouseleave = function (evt) {
-            console.log('[mouseleave]');
+            //console.log('[mouseleave]');
             hideLens();
             $document.off('mousemove', mousemove);
             $document.off('mouseleave', mouseleave);
@@ -135,7 +135,7 @@ var ImageZoom = angular.module('ImageZoom', [])
 
           // When image loaded, get image natural width and height
           image.bind('load', function (evt) {
-            console.log('imaged loaded');
+            //console.log('imaged loaded');
             nWidth = this.naturalWidth;
             nHeight = this.naturalHeight;
             changeLensBgImg($scope.imageSrc);
@@ -166,7 +166,7 @@ var ImageZoom = angular.module('ImageZoom', [])
             * @return {Object} { width, heigth }
             */
           var calculateAspectRatioFit = function (srcWidth, srcHeight, maxWidth, maxHeight) {
-              console.log({srcW: srcWidth, srcH:srcHeight});
+              //console.log({srcW: srcWidth, srcH:srcHeight});
               var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
 
               return { width: srcWidth*ratio, height: srcHeight*ratio };
